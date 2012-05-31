@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/cadastro_eventos" />
+	
+	<ScrollView android:id="@+id/svDocumentos1"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<LinearLayout android:id="@+id/llDocumentos1"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginRight="5dp" android:orientation="vertical">	
+	
+			<TextView android:text="@string/txt_numero" android:id="@+id/txtNumeroEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />				
+		
+			<TextView android:text="@string/txt_titulo" android:id="@+id/txtTituloEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:id="@+id/etxtTituloEvento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		
+			<TextView android:text="@string/txt_cliente" android:id="@+id/txtClienteEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Spinner android:id="@+id/spnClienteEvento" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+		
+			<TextView android:text="@string/txt_consultor" android:id="@+id/txtConsultorEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Spinner android:id="@+id/spnConsultorEvento" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+		
+			<TextView android:text="@string/txt_numero_pessoas" android:id="@+id/txtNumeroPessoasEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:id="@+id/etxtNumeroPessoasEvento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:inputType="number"/>
+		
+			<TextView android:text="@string/txt_data" android:id="@+id/txtDataEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<DatePicker android:id="@+id/dpDataEvento" android:foregroundGravity="center_horizontal"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		
+			<TextView android:text="@string/txt_hora" android:id="@+id/txtHoraEvento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TimePicker android:id="@+id/tpHoraEvento" android:layout_gravity="center"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		
+		</LinearLayout>
+
+	</ScrollView>		
+	<LinearLayout android:id="@+id/llEventos2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<Button android:text="@string/btn_salvar" android:id="@+id/btnSalvarEvento"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+		<Button android:text="@string/btn_cancelar" android:id="@+id/btnCancelarEvento"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+	</LinearLayout>		
+		
+</LinearLayout>

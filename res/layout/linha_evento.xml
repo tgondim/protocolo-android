@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/RelativeLayout01" android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaEvento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+		android:text="@+id/txtIdLinhaEvento" android:paddingRight="10dp" android:textStyle="bold"/>
+	<TextView android:id="@+id/txtDataLinhaEvento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtDataLinhaEvento"
+		android:layout_alignParentRight="true" android:textStyle="bold" />
+	<TextView android:id="@+id/txtTituloLinhaEvento" android:layout_width="wrap_content"  
+		android:layout_height="wrap_content" android:text="@+id/txtTituloLinhaEvento"
+		android:layout_below="@+id/txtIdLinhaEvento" android:layout_alignLeft="@+id/txtIdLinhaEvento"
+		android:paddingRight="10dp"/>
+	<TextView android:id="@+id/txtNumeroPessoasLinhaEvento" android:layout_width="wrap_content"  
+		android:layout_height="wrap_content" android:text="@+id/txtViaLinhaEvento"
+		android:layout_alignParentRight="true" android:layout_alignBottom="@+id/txtTituloLinhaEvento"
+		android:textColor="@color/numero_pessoas"/>
+	<TextView android:id="@+id/txtClienteLinhaEvento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtClienteLinhaEvento"  
+		android:layout_below="@+id/txtTituloLinhaEvento" android:layout_alignLeft="@+id/txtTituloLinhaEvento"
+		android:textStyle="bold" android:textColor="@color/cliente" />
+	<TextView android:id="@+id/txtConsultorLinhaEvento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtConsultorLinhaEvento"  
+		android:layout_below="@+id/txtClienteLinhaEvento" android:layout_alignLeft="@+id/txtClienteLinhaEvento"
+		android:textStyle="bold" android:textColor="@color/consultor" />
+
+</RelativeLayout>

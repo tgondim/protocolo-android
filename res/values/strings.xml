@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Geral -->
+    <string name="hello">Protocolo 1.0 beta</string>
+    <string name="app_name">Protocolo</string>
+	<string name="nao_implementado">Não implementado ainda</string>    
+	<string name="ordenar_por">Ordenar por</string>
+	
+	<!-- Menus -->
+	<string name="novo_documento">Novo Documento</string>    
+	<string name="novo_evento">Novo Evento</string>    
+	<string name="nova_verba">Nova Verba</string>    
+	<string name="novo_cliente">Novo Cliente</string>    
+	<string name="nova_via">Nova Via</string>    
+	<string name="novo_canal">Novo Canal</string>    
+	<string name="novo_consultor">Novo Consultor</string>    
+	<string name="relatorio_documentos">Relatório</string>    
+    
+    <!-- Titulos Activity -->
+    <string name="selecione_o_protocolo">Selecione o tipo de protocolo</string>
+    <string name="cadastro_documentos">Cadastro de Documentos</string>
+    <string name="cadastro_vias">Cadastro de Vias</string>
+    <string name="cadastro_canais">Cadastro de Canais</string>
+    <string name="cadastro_consultores">Cadastro de Consultores</string>
+    <string name="cadastro_clientes">Cadastro de Clientes</string>
+    <string name="cadastro_verbas">Cadastro de Verbas</string>
+    <string name="cadastro_eventos">Cadastro de Eventos</string>
+    
+    <!-- TextView -->
+    <string name="txt_numero" >Número: </string>
+    <string name="txt_numero_protocolo" >Número Protocolo</string>
+    <string name="txt_numero_pessoas" >Número de Pessoas</string>
+    <string name="txt_nome" >Nome</string>
+    <string name="txt_descricao" >Descrição</string>
+    <string name="txt_destino" >Destino</string>
+    <string name="txt_data" >Data</string>
+    <string name="txt_hora" >Hora</string>
+    <string name="txt_via" >Via</string>
+    <string name="txt_cliente" >Cliente</string>
+    <string name="txt_acao" >Ação</string>
+    <string name="txt_canal" >Canal</string>
+    <string name="txt_consultor" >Consultor</string>
+    <string name="txt_valor" >Valor</string>
+    <string name="txt_titulo" >Título</string>
+    
+    <!-- Button -->
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_anexar_imagem">Anexar imagem</string>
+    
+</resources>

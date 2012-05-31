@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Geral -->
+    <string name="hello">Protocol 1.0 beta</string>
+    <string name="app_name">Protocol</string>
+	<string name="nao_implementado">Not implemented yet</string>    
+	<string name="ordenar_por">Order By</string>
+	
+	<!-- Menus -->
+	<string name="novo_documento">New Document</string>    
+	<string name="novo_evento">New Event</string>    
+	<string name="nova_verba">New Fund</string>    
+	<string name="novo_cliente">New Client</string>    
+	<string name="nova_via">New Way</string>    
+	<string name="novo_canal">New Channel</string>    
+	<string name="novo_consultor">New Consultant</string>    
+	<string name="relatorio_documentos">Report</string>
+    
+    <!-- Titulos Activity -->
+    <string name="selecione_o_protocolo">Select protocol type</string>
+    <string name="cadastro_documentos">Documents</string>
+    <string name="cadastro_vias">Ways</string>
+    <string name="cadastro_canais">Channels</string>
+    <string name="cadastro_consultores">Consultant</string>
+    <string name="cadastro_clientes">Clients</string>
+    <string name="cadastro_verbas">Funds</string>
+    <string name="cadastro_eventos">Events</string>
+    
+    <!-- TextView -->
+    <string name="txt_numero" >Number: </string>
+    <string name="txt_numero_protocolo" >Protocol Number</string>
+    <string name="txt_numero_pessoas" >People Number</string>
+    <string name="txt_nome" >Name</string>
+    <string name="txt_descricao" >Description</string>
+    <string name="txt_destino" >Destiny</string>
+    <string name="txt_data" >Date</string>
+    <string name="txt_hora" >Time</string>
+    <string name="txt_via" >Way</string>
+    <string name="txt_cliente" >Client</string>
+    <string name="txt_acao" >Action</string>
+    <string name="txt_canal" >Channel</string>
+    <string name="txt_consultor" >Consultant</string>
+    <string name="txt_valor" >Value</string>
+    <string name="txt_titulo" >Title</string>
+    
+    <!-- Button -->
+    <string name="btn_salvar">Save</string>
+    <string name="btn_cancelar">Cancel</string>
+    <string name="btn_anexar_imagem">Attach image</string>
+    
+</resources>

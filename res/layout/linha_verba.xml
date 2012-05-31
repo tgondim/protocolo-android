@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RelativeLayout01" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaVerba"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true" android:text="@+id/txtIdLinhaVerba"
+		android:paddingRight="10dp" android:textStyle="bold" />
+		
+	<TextView android:id="@+id/txtDataLinhaVerba"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtDataLinhaVerba" android:layout_alignParentRight="true"
+		android:textStyle="bold" />
+		
+	<TextView android:id="@+id/txtClienteLinhaVerba" android:textColor="@color/cliente"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtClienteLinhaVerba" android:layout_below="@+id/txtIdLinhaVerba"
+		android:layout_alignLeft="@+id/txtIdLinhaVerba" />
+		
+	<TextView android:layout_width="wrap_content" android:text="@+id/txtValorLinhaVerba"
+		android:id="@+id/txtValorLinhaVerba" android:layout_below="@+id/txtDataLinhaVerba"
+		android:layout_height="wrap_content" android:layout_alignRight="@+id/txtDataLinhaVerba"  android:textColor="@color/valor"/>
+		
+	<TextView android:id="@+id/txtAcaoLinhaVerba"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtAcaoLinhaVerba" android:layout_below="@+id/txtClienteLinhaVerba"
+		android:layout_alignLeft="@+id/txtClienteLinhaVerba"
+		android:paddingRight="10dp" />
+		
+	<TextView android:id="@+id/txtCanalLinhaVerba"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtCanalLinhaVerba" android:textColor="@color/canal"
+		android:layout_alignParentRight="true" android:layout_alignBottom="@+id/txtAcaoLinhaVerba" />
+		
+	<TextView android:layout_width="wrap_content" android:text="@+id/txtConsultorLinhaVerba"
+		android:id="@+id/txtConsultorLinhaVerba" android:layout_height="wrap_content"
+		android:layout_below="@+id/txtAcaoLinhaVerba"  android:layout_alignLeft="@+id/txtAcaoLinhaVerba" 
+		android:textStyle="bold" android:textColor="@color/consultor" android:gravity="center_horizontal"
+		android:textSize="17dp"/>
+
+</RelativeLayout>

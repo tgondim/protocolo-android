@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/cadastro_verbas" />
+
+	<ScrollView android:id="@+id/svVerbas1"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<LinearLayout android:id="@+id/llVerbas1"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginRight="5dp" android:orientation="vertical">
+
+			<TextView android:text="@string/txt_numero" android:id="@+id/txtNumeroVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			
+			<TextView android:text="@string/txt_cliente" android:id="@+id/txtClienteVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Spinner android:id="@+id/spnClienteVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />				
+				
+			<TextView android:text="@string/txt_acao" android:id="@+id/txtAcaoVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:singleLine="true" android:id="@+id/etxtAcaoVerba"/>
+
+			<TextView android:text="@string/txt_valor" android:id="@+id/txtValorVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:singleLine="true" android:id="@+id/etxtValorVerba" android:inputType="numberDecimal"/>
+
+			<TextView android:text="@string/txt_via"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtViaVerba" />
+			<Spinner android:id="@+id/spnViaVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_canal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtCanalVerba" />
+			<Spinner android:id="@+id/spnCanalVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_consultor"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtConsultorVerba" />
+			<Spinner android:id="@+id/spnConsultorVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_data" android:id="@+id/txtDataVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<DatePicker android:id="@+id/dpDataVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:foregroundGravity="center_horizontal" />
+
+			<TextView android:text="@string/txt_hora" android:id="@+id/txtHoraVerba"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TimePicker android:id="@+id/tpHoraVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout android:id="@+id/llVerbas2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<Button android:text="@string/btn_salvar" android:id="@+id/btnSalvarVerba"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+		<Button android:text="@string/btn_cancelar" android:id="@+id/btnCancelarVerba"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+</LinearLayout>

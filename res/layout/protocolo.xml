@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/selecione_o_protocolo"
+		android:layout_gravity="center" />
+	<Button android:text="Documentos" android:id="@+id/btnDocumentos"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	<Button android:text="Verbas" android:id="@+id/btnVerbas"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	<Button android:text="Eventos" android:id="@+id/btnEventos"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	<TextView android:text="Cadastro auxiliar" android:id="@+id/txtCadastroAuxiliar"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_gravity="center" />
+	<TableLayout android:id="@+id/tableLayout1" android:stretchColumns="*"
+		android:layout_height="fill_parent" android:layout_width="fill_parent">
+		<TableRow>
+			<Button android:text="Canais" android:id="@+id/btnCanais" />
+			<Button android:text="Clientes" android:id="@+id/btnClientes" />
+		</TableRow>
+		<TableRow>
+			<Button android:text="Consultores" android:id="@+id/btnConsultores" />
+			<Button android:text="Vias" android:id="@+id/btnVias" />
+		</TableRow>
+<!-- 		<TableRow> -->
+<!-- 			<Button android:text="Criar Cópia" android:id="@+id/btnCriarCopia" /> -->
+<!-- 			<Button android:text="Restaurar Cópia" android:id="@+id/btnRestaurarCopia" /> -->
+<!-- 		</TableRow> -->
+	</TableLayout>
+</LinearLayout>

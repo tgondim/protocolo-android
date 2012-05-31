@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cliente">#FF7F00</color>
+    <color name="destino">#5F9F9F</color>
+    <color name="descricao">#5C4033</color>      
+    <color name="consultor">#00009C</color>      
+    <color name="valor">#FF0000</color>      
+    <color name="via">#8B0000</color>      
+    <color name="canal">#8B0000</color>      
+    <color name="numero_pessoas">#8B0000</color>  
+</resources>

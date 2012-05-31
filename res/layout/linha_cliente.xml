@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RelativeLayout01" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaCliente"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true" android:text="@+id/txtIdLinhaCliente"
+		android:paddingRight="10dp" android:textStyle="bold" />
+	<TextView android:layout_height="wrap_content" android:text="@+id/txtNomeLinhaCliente"
+		android:textColor="@color/cliente" android:textStyle="bold"
+		android:id="@+id/txtNomeLinhaCliente" android:layout_width="wrap_content"
+		android:layout_below="@+id/txtIdLinhaCliente" ></TextView>
+
+</RelativeLayout>

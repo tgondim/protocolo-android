@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/cadastro_documentos" />
+
+	<ScrollView android:id="@+id/svDocumentos1"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<LinearLayout android:id="@+id/llDocumentos1"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginRight="5dp" android:orientation="vertical">
+
+			<TextView android:text="@string/txt_numero" android:id="@+id/txtNumeroDocumento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_descricao" android:id="@+id/txtDescricaoDocumento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true"
+				android:id="@+id/etxtDescricaoDocumento" />
+
+			<TextView android:text="@string/txt_destino" android:id="@+id/txtDestinoDocumento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true"
+				android:id="@+id/etxtDestinoDocumento" />
+
+			<TextView android:text="@string/txt_via"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtViaDocumento" />
+			<Spinner android:id="@+id/spnViaDocumento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_data" android:id="@+id/txtDataDocumento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<DatePicker android:id="@+id/dpDataDocumento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:foregroundGravity="center_horizontal" />
+
+			<TextView android:text="@string/txt_hora" android:id="@+id/txtHoraDocumento"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TimePicker android:id="@+id/tpHoraDocumento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_gravity="center" />
+
+			<Button android:text="@string/btn_anexar_imagem" android:id="@+id/btnAnexarDocumento"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout android:id="@+id/llDocumentos2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<Button android:text="@string/btn_salvar" android:id="@+id/btnSalvarDocumento"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+		<Button android:text="@string/btn_cancelar" android:id="@+id/btnCancelarDocumento"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+</LinearLayout>

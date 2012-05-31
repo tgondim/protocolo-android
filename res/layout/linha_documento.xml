@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/RelativeLayout01" android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaDocumento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+		android:text="@+id/txtIdLinhaDocumento" android:paddingRight="10dp" android:textStyle="bold"/>
+	<TextView android:id="@+id/txtDataLinhaDocumento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtDataLinhaDocumento"
+		android:layout_alignParentRight="true" android:textStyle="bold" />
+	<TextView android:id="@+id/txtDescricaoLinhaDocumento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtDescricaoLinhaDocumento"  
+		android:layout_below="@+id/txtIdLinhaDocumento" android:layout_alignLeft="@+id/txtIdLinhaDocumento"
+		android:textStyle="bold" android:textColor="@color/descricao" android:textSize="17dp" />
+	<TextView android:id="@+id/txtDestinoLinhaDocumento" android:layout_width="wrap_content"  
+		android:layout_height="wrap_content" android:text="@+id/txtDestinoLinhaDocumento"
+		android:layout_below="@+id/txtDescricaoLinhaDocumento" android:layout_alignLeft="@+id/txtDescricaoLinhaDocumento"
+		android:paddingRight="10dp" android:textColor="@color/destino"/>
+	<TextView android:id="@+id/txtViaLinhaDocumento" android:layout_width="wrap_content"  
+		android:layout_height="wrap_content" android:text="@+id/txtViaLinha"
+		android:layout_alignParentRight="true" android:layout_alignBottom="@+id/txtDestinoLinhaDocumento"
+		android:textColor="@color/via"/>
+
+</RelativeLayout>

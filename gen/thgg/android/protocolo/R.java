@@ -47,9 +47,12 @@ public final class R {
         public static final int btnSalvarVia=0x7f06004d;
         public static final int btnVerbas=0x7f060074;
         public static final int btnVias=0x7f06007b;
+        public static final int btnVisualizarResumoVerba=0x7f060087;
         public static final int dpAteRelatorioVerbas=0x7f060072;
         public static final int dpDataDocumento=0x7f06001c;
         public static final int dpDataEvento=0x7f06002d;
+        public static final int dpDataResumoVerbaAte=0x7f060086;
+        public static final int dpDataResumoVerbaDe=0x7f060084;
         public static final int dpDataVerba=0x7f060043;
         public static final int dpDeRelatorioVerbas=0x7f060070;
         public static final int etxtAcaoVerba=0x7f060039;
@@ -72,10 +75,14 @@ public final class R {
         public static final int llVerbas2=0x7f060046;
         public static final int llVia1=0x7f06004c;
         public static final int lvOrdenacao=0x7f06006c;
+        public static final int scrollView1=0x7f06007c;
+        public static final int spnCanalResumoVerba=0x7f060080;
         public static final int spnCanalVerba=0x7f06003f;
         public static final int spnClienteEvento=0x7f060027;
+        public static final int spnClienteResumoVerba=0x7f06007e;
         public static final int spnClienteVerba=0x7f060037;
         public static final int spnConsultorEvento=0x7f060029;
+        public static final int spnConsultorResumoVerba=0x7f060082;
         public static final int spnConsultorVerba=0x7f060041;
         public static final int spnNomeClienteRelatorioVerbas=0x7f06006e;
         public static final int spnViaDocumento=0x7f06001a;
@@ -91,16 +98,20 @@ public final class R {
         public static final int tpHoraVerba=0x7f060045;
         public static final int txtAcaoLinhaVerba=0x7f060067;
         public static final int txtAcaoVerba=0x7f060038;
+        public static final int txtAte=0x7f060085;
         public static final int txtCadastroAuxiliar=0x7f060076;
         public static final int txtCanalLinhaVerba=0x7f060068;
+        public static final int txtCanalResumoVerba=0x7f06007f;
         public static final int txtCanalVerba=0x7f06003e;
         public static final int txtClienteEvento=0x7f060026;
         public static final int txtClienteLinhaEvento=0x7f060061;
         public static final int txtClienteLinhaVerba=0x7f060065;
+        public static final int txtClienteResumoVerba=0x7f06007d;
         public static final int txtClienteVerba=0x7f060036;
         public static final int txtConsultorEvento=0x7f060028;
         public static final int txtConsultorLinhaEvento=0x7f060062;
         public static final int txtConsultorLinhaVerba=0x7f060069;
+        public static final int txtConsultorResumoVerba=0x7f060081;
         public static final int txtConsultorVerba=0x7f060040;
         public static final int txtDataDocumento=0x7f06001b;
         public static final int txtDataEvento=0x7f06002c;
@@ -108,6 +119,7 @@ public final class R {
         public static final int txtDataLinhaEvento=0x7f06005d;
         public static final int txtDataLinhaVerba=0x7f060064;
         public static final int txtDataVerba=0x7f060042;
+        public static final int txtDe=0x7f060083;
         public static final int txtDescricaoCanal=0x7f060001;
         public static final int txtDescricaoDocumento=0x7f060015;
         public static final int txtDescricaoLinhaCanal=0x7f060051;
@@ -139,6 +151,12 @@ public final class R {
         public static final int txtNumeroPessoasEvento=0x7f06002a;
         public static final int txtNumeroPessoasLinhaEvento=0x7f06005f;
         public static final int txtNumeroVerba=0x7f060035;
+        public static final int txtResumoVerbaCanal=0x7f060089;
+        public static final int txtResumoVerbaCliente=0x7f060088;
+        public static final int txtResumoVerbaConsultor=0x7f06008a;
+        public static final int txtResumoVerbaDataAte=0x7f06008c;
+        public static final int txtResumoVerbaDataDe=0x7f06008b;
+        public static final int txtResumoVerbaTotal=0x7f06008d;
         public static final int txtTituloEvento=0x7f060024;
         public static final int txtTituloLinhaEvento=0x7f06005e;
         public static final int txtValorLinhaVerba=0x7f060066;
@@ -167,15 +185,18 @@ public final class R {
         public static final int ordenacao_dialog=0x7f03000e;
         public static final int parametros_relatorio_verbas=0x7f03000f;
         public static final int protocolo=0x7f030010;
+        public static final int resumo_verbas=0x7f030011;
+        public static final int resumo_verbas_dialog=0x7f030012;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
-        public static final int btn_anexar_imagem=0x7f050025;
-        public static final int btn_cancelar=0x7f050024;
+        public static final int btn_anexar_imagem=0x7f05002a;
+        public static final int btn_cancelar=0x7f050029;
         /**  Button 
  Button 
          */
-        public static final int btn_salvar=0x7f050023;
+        public static final int btn_salvar=0x7f050028;
+        public static final int btn_visualizar=0x7f05002b;
         public static final int cadastro_canais=0x7f05000f;
         public static final int cadastro_clientes=0x7f050011;
         public static final int cadastro_consultores=0x7f050010;
@@ -199,28 +220,35 @@ public final class R {
         public static final int novo_documento=0x7f050004;
         public static final int novo_evento=0x7f050005;
         public static final int ordenar_por=0x7f050003;
-        public static final int relatorio_documentos=0x7f05000b;
+        public static final int resumo_verbas=0x7f050014;
         /**  Titulos Activity 
  Titulos Activity 
          */
         public static final int selecione_o_protocolo=0x7f05000c;
-        public static final int txt_acao=0x7f05001e;
-        public static final int txt_canal=0x7f05001f;
-        public static final int txt_cliente=0x7f05001d;
-        public static final int txt_consultor=0x7f050020;
-        public static final int txt_data=0x7f05001a;
-        public static final int txt_descricao=0x7f050018;
-        public static final int txt_destino=0x7f050019;
-        public static final int txt_hora=0x7f05001b;
-        public static final int txt_nome=0x7f050017;
+        /**  	<string name="relatorio_documentos">Relatório</string>    
+         */
+        public static final int sumario=0x7f05000b;
+        public static final int txt_acao=0x7f050022;
+        public static final int txt_ate=0x7f05001f;
+        public static final int txt_canal=0x7f050023;
+        public static final int txt_cliente=0x7f050021;
+        public static final int txt_consultor=0x7f050024;
+        public static final int txt_data=0x7f05001c;
+        public static final int txt_de=0x7f05001e;
+        public static final int txt_descricao=0x7f05001a;
+        public static final int txt_destino=0x7f05001b;
+        public static final int txt_hora=0x7f05001d;
         /**  TextView 
  TextView 
          */
-        public static final int txt_numero=0x7f050014;
-        public static final int txt_numero_pessoas=0x7f050016;
-        public static final int txt_numero_protocolo=0x7f050015;
-        public static final int txt_titulo=0x7f050022;
-        public static final int txt_valor=0x7f050021;
-        public static final int txt_via=0x7f05001c;
+        public static final int txt_id=0x7f050015;
+        public static final int txt_nome=0x7f050019;
+        public static final int txt_numero=0x7f050016;
+        public static final int txt_numero_pessoas=0x7f050018;
+        public static final int txt_numero_protocolo=0x7f050017;
+        public static final int txt_titulo=0x7f050026;
+        public static final int txt_total=0x7f050027;
+        public static final int txt_valor=0x7f050025;
+        public static final int txt_via=0x7f050020;
     }
 }

@@ -67,6 +67,7 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 		menu.add(0, 3, 0, getResources().getString(R.string.nova_via));
 		menu.add(0, 4, 0, getResources().getString(R.string.novo_canal));
 		menu.add(0, 5, 0, getResources().getString(R.string.novo_consultor));
+		menu.add(0, 6, 0, getResources().getString(R.string.sumario));
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -100,6 +101,11 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 			intent = new Intent("CADASTRO_CONSULTORES");
 			startActivity(intent);
 			break;
+			
+		case 6: 
+			intent = new Intent("RESUMO_VERBAS");
+			startActivity(intent);
+			break;
 		}
 		return super.onMenuItemSelected(featureId, item);
 	}
@@ -108,8 +114,8 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		menu.add(0, 5, 0, "Excluir");
-		menu.add(0, 7, 0, "Ordenar");
+		menu.add(0, 7, 0, "Excluir");
+		menu.add(0, 8, 0, "Ordenar");
 	}
 
 	@Override
@@ -117,12 +123,12 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo)item.getMenuInfo();
 		
 		switch (item.getItemId()) {
-		case 6:
+		case 7:
 			RepositorioVerbas.getRepositorio(this).excluir(info.id);
 			atualizarVerba();
 			break;
 
-		case 7:
+		case 8:
 			getOrdenacaoDialog().show();
 			break;
 

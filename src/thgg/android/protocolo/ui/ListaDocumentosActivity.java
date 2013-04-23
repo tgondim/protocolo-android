@@ -64,7 +64,7 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, 1, 0, getResources().getString(R.string.novo_documento));
 		menu.add(0, 2, 0, getResources().getString(R.string.nova_via));
-		menu.add(0, 3, 0, getResources().getString(R.string.relatorio_documentos));
+//		menu.add(0, 3, 0, getResources().getString(R.string.sumario));
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -83,9 +83,9 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 			startActivity(intent);
 			break;
 		
-		case 3: 
-			//chamar a criaÁ„o do relatorio
-			break;
+//		case 3: 
+//			//chamar a visualização do resumo
+//			break;
 		}
 		return super.onMenuItemSelected(featureId, item);
 	}

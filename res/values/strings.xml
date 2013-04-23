@@ -14,7 +14,8 @@
 	<string name="nova_via">Nova Via</string>    
 	<string name="novo_canal">Novo Canal</string>    
 	<string name="novo_consultor">Novo Consultor</string>    
-	<string name="relatorio_documentos">Relatório</string>    
+<!-- 	<string name="relatorio_documentos">Relatório</string>    -->
+	<string name="sumario">Resumo</string> 
     
     <!-- Titulos Activity -->
     <string name="selecione_o_protocolo">Selecione o tipo de protocolo</string>
@@ -25,8 +26,10 @@
     <string name="cadastro_clientes">Cadastro de Clientes</string>
     <string name="cadastro_verbas">Cadastro de Verbas</string>
     <string name="cadastro_eventos">Cadastro de Eventos</string>
+    <string name="resumo_verbas">Resumo Verbas</string>
     
     <!-- TextView -->
+    <string name="txt_id" >Id: </string>
     <string name="txt_numero" >Número: </string>
     <string name="txt_numero_protocolo" >Número Protocolo</string>
     <string name="txt_numero_pessoas" >Número de Pessoas</string>
@@ -35,6 +38,8 @@
     <string name="txt_destino" >Destino</string>
     <string name="txt_data" >Data</string>
     <string name="txt_hora" >Hora</string>
+    <string name="txt_de" >De</string>
+    <string name="txt_ate" >Até</string>
     <string name="txt_via" >Via</string>
     <string name="txt_cliente" >Cliente</string>
     <string name="txt_acao" >Ação</string>
@@ -42,10 +47,12 @@
     <string name="txt_consultor" >Consultor</string>
     <string name="txt_valor" >Valor</string>
     <string name="txt_titulo" >Título</string>
+    <string name="txt_total" >Total</string>
     
     <!-- Button -->
     <string name="btn_salvar">Salvar</string>
     <string name="btn_cancelar">Cancelar</string>
     <string name="btn_anexar_imagem">Anexar imagem</string>
+    <string name="btn_visualizar">Visualizar</string>
     
 </resources>

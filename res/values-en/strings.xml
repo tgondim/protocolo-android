@@ -14,7 +14,7 @@
 	<string name="nova_via">New Way</string>    
 	<string name="novo_canal">New Channel</string>    
 	<string name="novo_consultor">New Consultant</string>    
-	<string name="relatorio_documentos">Report</string>
+    <string name="sumario">Summary</string>
     
     <!-- Titulos Activity -->
     <string name="selecione_o_protocolo">Select protocol type</string>
@@ -25,8 +25,10 @@
     <string name="cadastro_clientes">Clients</string>
     <string name="cadastro_verbas">Funds</string>
     <string name="cadastro_eventos">Events</string>
+    <string name="resumo_verbas">Funds Summary</string>
     
     <!-- TextView -->
+    <string name="txt_id" >Id: </string>
     <string name="txt_numero" >Number: </string>
     <string name="txt_numero_protocolo" >Protocol Number</string>
     <string name="txt_numero_pessoas" >People Number</string>
@@ -35,6 +37,8 @@
     <string name="txt_destino" >Destiny</string>
     <string name="txt_data" >Date</string>
     <string name="txt_hora" >Time</string>
+    <string name="txt_de" >From</string>
+    <string name="txt_ate" >To</string>
     <string name="txt_via" >Way</string>
     <string name="txt_cliente" >Client</string>
     <string name="txt_acao" >Action</string>
@@ -42,10 +46,12 @@
     <string name="txt_consultor" >Consultant</string>
     <string name="txt_valor" >Value</string>
     <string name="txt_titulo" >Title</string>
+    <string name="txt_total" >Total</string>
     
     <!-- Button -->
     <string name="btn_salvar">Save</string>
     <string name="btn_cancelar">Cancel</string>
     <string name="btn_anexar_imagem">Attach image</string>
+    <string name="btn_visualizar">Visualize</string>
     
 </resources>

@@ -42,6 +42,13 @@ public class StringUtils {
 		return sData;
 	}
 	
+	public static String getDataVisual(Calendar data) {
+		String sData = StringUtils.lpad(String.valueOf(data.get(Calendar.DAY_OF_MONTH)), "0", 2) + "/" +
+				StringUtils.lpad(String.valueOf(data.get(Calendar.MONTH)), "0", 2) + "/" +
+				StringUtils.lpad(String.valueOf(data.get(Calendar.YEAR)), "0", 4);
+		return sData;
+	}
+	
 	public static String getDataHora(Calendar data) {
 		String sData = StringUtils.lpad(String.valueOf(data.get(Calendar.DAY_OF_MONTH)), "0", 2) + "/" +
 			StringUtils.lpad(String.valueOf(data.get(Calendar.MONTH)+1), "0", 2) + "/" +

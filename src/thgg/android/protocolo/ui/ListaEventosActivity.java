@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -62,9 +63,9 @@ public class ListaEventosActivity extends ListActivity implements OnItemClickLis
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.novo_evento));
-		menu.add(0, 2, 0, getResources().getString(R.string.novo_cliente));
-		menu.add(0, 3, 0, getResources().getString(R.string.novo_consultor));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_eventos_menu, menu);
+	    
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -72,19 +73,19 @@ public class ListaEventosActivity extends ListActivity implements OnItemClickLis
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.novo_evento_lista_eventos:
 			intent = new Intent("CADASTRO_EVENTOS");
 			intent.putExtra("id", 0);
 			startActivity(intent);
 			break;
 			
-		case 2: 
+		case R.id.novo_cliente_lista_eventos: 
 			intent = new Intent("CADASTRO_CLIENTES");
 			startActivity(intent);
 			break;
 
-		case 3: 
-			intent = new Intent("CADASTRO_CONSULTORES");
+		case R.id.novo_representante_lista_eventos: 
+			intent = new Intent("CADASTRO_REPRESENTANTES");
 			startActivity(intent);
 			break;
 		}
@@ -114,7 +115,7 @@ public class ListaEventosActivity extends ListActivity implements OnItemClickLis
 			break;
 
 		default:
-			throw new InvalidParameterException("Opção inválida");
+			throw new InvalidParameterException("Opcao invalida");
 		}
 		return super.onContextItemSelected(item);
 	}
@@ -122,7 +123,7 @@ public class ListaEventosActivity extends ListActivity implements OnItemClickLis
 	private View getOrdenacaoView() {
 		if (ordenacaoView == null) {
 			ordenacaoView = LayoutInflater.from(this).inflate(R.layout.ordenacao_dialog, null);
-			String[] listaOrdenacao = new String[] {"Número de Protocolo", "Título", "Número de Pessoas", "Data"}; 
+			String[] listaOrdenacao = new String[] {"Numero de Protocolo", "Titulo", "Numero de Pessoas", "Data"}; 
 			lvOrdenacao = (ListView)ordenacaoView.findViewById(R.id.lvOrdenacao);
 			ordenacaoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaOrdenacao);
 			lvOrdenacao.setAdapter(ordenacaoAdapter);

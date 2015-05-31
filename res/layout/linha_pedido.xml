@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RelativeLayout01" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaPedido"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true" android:text="@+id/txtIdLinhaPedido"
+		android:paddingRight="10dp" android:textStyle="bold" />
+		
+	<TextView android:id="@+id/txtDataEmissaoLinhaPedido"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtDataEmissaoLinhaPedido" android:layout_alignParentRight="true"
+		android:textStyle="bold" />
+		
+	<TextView android:id="@+id/txtClienteLinhaPedido" android:textColor="@color/cliente"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtClienteLinhaPedido" android:layout_below="@+id/txtIdLinhaPedido"
+		android:layout_alignLeft="@+id/txtIdLinhaPedido" />
+		
+	<TextView android:layout_width="wrap_content" android:text="@+id/txtValorTotalLinhaPedido"
+		android:id="@+id/txtValorTotalLinhaPedido" android:layout_below="@+id/txtDataEmissaoLinhaPedido"
+		android:layout_height="wrap_content" android:layout_alignRight="@+id/txtDataEmissaoLinhaPedido"  android:textColor="@color/valor"/>
+		
+	<TextView android:id="@+id/txtNumeroLinhaPedido"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtNumeroLinhaPedido" android:layout_below="@+id/txtClienteLinhaPedido"
+		android:layout_alignLeft="@+id/txtClienteLinhaPedido"
+		android:paddingRight="10dp" />
+		
+	<TextView android:id="@+id/txtRepresentadaLinhaPedido"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@+id/txtRepresentadaLinhaPedido" 
+		android:layout_alignParentRight="true" android:layout_alignBottom="@+id/txtNumeroLinhaPedido" />
+		
+	<TextView android:layout_width="wrap_content" android:text="@+id/txtRepresentanteLinhaPedido"
+		android:id="@+id/txtRepresentanteLinhaPedido" android:layout_height="wrap_content"
+		android:layout_below="@+id/txtNumeroLinhaPedido"  android:layout_alignLeft="@+id/txtNumeroLinhaPedido" 
+		android:textStyle="bold" android:gravity="center_horizontal"
+		android:textSize="17dp"/>
+
+</RelativeLayout>

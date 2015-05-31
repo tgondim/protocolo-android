@@ -33,10 +33,16 @@
 		android:text="@+id/txtCanalLinhaVerba" android:textColor="@color/canal"
 		android:layout_alignParentRight="true" android:layout_alignBottom="@+id/txtAcaoLinhaVerba" />
 		
-	<TextView android:layout_width="wrap_content" android:text="@+id/txtConsultorLinhaVerba"
-		android:id="@+id/txtConsultorLinhaVerba" android:layout_height="wrap_content"
+	<TextView android:layout_width="wrap_content" android:text="@+id/txtRepresentanteLinhaVerba"
+		android:id="@+id/txtRepresentanteLinhaVerba" android:layout_height="wrap_content"
 		android:layout_below="@+id/txtAcaoLinhaVerba"  android:layout_alignLeft="@+id/txtAcaoLinhaVerba" 
-		android:textStyle="bold" android:textColor="@color/consultor" android:gravity="center_horizontal"
+		android:textStyle="bold" android:textColor="@color/representante" android:gravity="center_horizontal"
+		android:textSize="17dp"/>
+
+		<TextView android:layout_width="wrap_content" android:text="@+id/txtRepresentadaLinhaVerba"
+		android:id="@+id/txtRepresentadaLinhaVerba" android:layout_height="wrap_content"
+		android:layout_below="@+id/txtRepresentanteLinhaVerba"  android:layout_alignLeft="@+id/txtRepresentanteLinhaVerba" 
+		android:textStyle="bold" android:textColor="@color/representada" android:gravity="center_horizontal"
 		android:textSize="17dp"/>
 
 </RelativeLayout>

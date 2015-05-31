@@ -21,9 +21,9 @@
 		android:layout_height="wrap_content" android:text="@+id/txtClienteLinhaEvento"  
 		android:layout_below="@+id/txtTituloLinhaEvento" android:layout_alignLeft="@+id/txtTituloLinhaEvento"
 		android:textStyle="bold" android:textColor="@color/cliente" />
-	<TextView android:id="@+id/txtConsultorLinhaEvento" android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" android:text="@+id/txtConsultorLinhaEvento"  
+	<TextView android:id="@+id/txtRepresentanteLinhaEvento" android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" android:text="@+id/txtRepresentanteLinhaEvento"  
 		android:layout_below="@+id/txtClienteLinhaEvento" android:layout_alignLeft="@+id/txtClienteLinhaEvento"
-		android:textStyle="bold" android:textColor="@color/consultor" />
+		android:textStyle="bold" android:textColor="@color/representante" />
 
 </RelativeLayout>

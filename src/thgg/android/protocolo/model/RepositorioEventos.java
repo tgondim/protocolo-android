@@ -43,7 +43,7 @@ public class RepositorioEventos {
 	
 	public Evento procurar(long id) {
 		Cursor cursor = db.query("eventos", 
-				new String[] {"_id", "titulo", "cliente", "consultor", "numero_pessoas", "data", "hora"}, 
+				new String[] {"_id", "titulo", "cliente", "representante", "numero_pessoas", "data", "hora"}, 
 				"_id=?", 
 				new String[]{String.valueOf(id)}, 
 				null, 
@@ -52,7 +52,7 @@ public class RepositorioEventos {
 		if (cursor.getCount() != 0) {
 			cursor.moveToFirst();
 			Cliente cliente = RepositorioClientes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("cliente")));
-			Consultor consultor = RepositorioConsultores.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("consultor")));
+			Representante representante = RepositorioRepresentantes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representante")));
 			
 			Calendar data = StringUtils.getCalendar(cursor.getString(cursor.getColumnIndexOrThrow("data")), 
 					cursor.getString(cursor.getColumnIndexOrThrow("hora")));
@@ -60,7 +60,7 @@ public class RepositorioEventos {
 			Evento evento = new Evento(cursor.getLong(cursor.getColumnIndexOrThrow("_id")), 
 					cursor.getString(cursor.getColumnIndexOrThrow("titulo")), 
 					cliente, 
-					consultor,
+					representante,
 					cursor.getInt(cursor.getColumnIndexOrThrow("numero_pessoas")),
 					data);
 			return evento;
@@ -71,7 +71,7 @@ public class RepositorioEventos {
 	public ArrayList<Evento> listar(String colunaOrdenar) {
 		ArrayList<Evento> listaEventos = new ArrayList<Evento>();
 		Cursor cursor = db.query("eventos", 
-				new String[] {"_id", "titulo", "cliente", "consultor", "numero_pessoas", "data", "hora"}, 
+				new String[] {"_id", "titulo", "cliente", "representante", "numero_pessoas", "data", "hora"}, 
 				null, 
 				null, 
 				null, 
@@ -82,7 +82,7 @@ public class RepositorioEventos {
 			Evento evento;
 			while (!cursor.isAfterLast()) {
 				Cliente cliente = RepositorioClientes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("cliente")));
-				Consultor consultor = RepositorioConsultores.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("consultor")));
+				Representante representante = RepositorioRepresentantes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representante")));
 				
 				Calendar data = StringUtils.getCalendar(cursor.getString(cursor.getColumnIndexOrThrow("data")), 
 						cursor.getString(cursor.getColumnIndexOrThrow("hora")));
@@ -90,7 +90,7 @@ public class RepositorioEventos {
 				evento = new Evento(cursor.getLong(cursor.getColumnIndexOrThrow("_id")), 
 						cursor.getString(cursor.getColumnIndexOrThrow("titulo")), 
 						cliente, 
-						consultor,
+						representante,
 						cursor.getInt(cursor.getColumnIndexOrThrow("numero_pessoas")),
 						data);
 				listaEventos.add(evento);
@@ -104,7 +104,7 @@ public class RepositorioEventos {
 		ContentValues cv = new ContentValues();
 		cv.put("titulo", evento.getTitulo());
 		cv.put("cliente", evento.getCliente().getId());
-		cv.put("consultor", evento.getConsultor().getId());
+		cv.put("representante", evento.getRepresentante().getId());
 		cv.put("numero_pessoas", evento.getNumeroPessoas());
 		cv.put("data", StringUtils.getData(evento.getData()));
 		cv.put("hora", StringUtils.getHora(evento.getData()));
@@ -117,7 +117,7 @@ public class RepositorioEventos {
 		cv.put("_id", evento.getId());
 		cv.put("titulo", evento.getTitulo());
 		cv.put("cliente", evento.getCliente().getId());
-		cv.put("consultor", evento.getConsultor().getId());
+		cv.put("representante", evento.getRepresentante().getId());
 		cv.put("numero_pessoas", evento.getNumeroPessoas());
 		cv.put("data", StringUtils.getData(evento.getData()));
 		cv.put("hora", StringUtils.getHora(evento.getData()));

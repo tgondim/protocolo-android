@@ -25,7 +25,8 @@
 			<TextView android:text="@string/txt_acao" android:id="@+id/txtAcaoVerba"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
-				android:singleLine="true" android:id="@+id/etxtAcaoVerba"/>
+				android:singleLine="true" android:id="@+id/etxtAcaoVerba"
+				android:capitalize="sentences"/>
 
 			<TextView android:text="@string/txt_valor" android:id="@+id/txtValorVerba"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
@@ -44,10 +45,16 @@
 			<Spinner android:id="@+id/spnCanalVerba"
 				android:layout_width="fill_parent" android:layout_height="wrap_content" />
 
-			<TextView android:text="@string/txt_consultor"
+			<TextView android:text="@string/txt_representante"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:id="@+id/txtConsultorVerba" />
-			<Spinner android:id="@+id/spnConsultorVerba"
+				android:id="@+id/txtRepresentanteVerba" />
+			<Spinner android:id="@+id/spnRepresentanteVerba"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+			
+			<TextView android:text="@string/txt_representada"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtRepresentadaVerba" />
+			<Spinner android:id="@+id/spnRepresentadaVerba"
 				android:layout_width="fill_parent" android:layout_height="wrap_content" />
 
 			<TextView android:text="@string/txt_data" android:id="@+id/txtDataVerba"

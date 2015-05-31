@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/novo_verba_lista_verbas"
+          android:title="@string/nova_verba"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_cliente_lista_verbas"
+          android:title="@string/novo_cliente"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_via_lista_verbas"
+          android:title="@string/nova_via"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_canal_lista_verbas"
+          android:title="@string/novo_canal"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_representante_lista_verbas"
+          android:title="@string/novo_representante"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_representada_lista_verbas"
+          android:title="@string/novo_representada"
+          android:showAsAction="ifRoom"/>
+<!--     <item android:id="@+id/novo_sumario_lista_verbas" -->
+<!--           android:title="@string/sumario" -->
+<!--           android:showAsAction="ifRoom"/> -->
+</menu>

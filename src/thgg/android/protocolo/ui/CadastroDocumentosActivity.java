@@ -86,7 +86,7 @@ public class CadastroDocumentosActivity extends Activity implements OnClickListe
 
 	private void atualizaDocumento(long id) {
 		documento = RepositorioDocumentos.getRepositorio(this).procurar(id);
-		txtNumero.setText("Número: " + documento.getId());
+		txtNumero.setText("Numero: " + documento.getId());
 		etxtDescricao.setText(documento.getDescricao());
 		etxtDestino.setText(documento.getDestino());
 		spnVia.setSelection(spinnerViaAdapter.getPosition(documento.getVia()));

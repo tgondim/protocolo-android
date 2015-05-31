@@ -13,8 +13,11 @@ public class ProtocoloActivity extends Activity implements OnClickListener {
 	Button btnDocumentos;
  	Button btnVerbas;
 	Button btnEventos;
-	Button btnConsultores;
+	Button btnPedidos;
+//	Button btnConsultores;
 	Button btnClientes;
+	Button btnRepresentantes;
+	Button btnRepresentadas;
 	Button btnVias;
 	Button btnCanais;
 //	Button btnCriarCopia;
@@ -29,8 +32,11 @@ public class ProtocoloActivity extends Activity implements OnClickListener {
         btnDocumentos = (Button)findViewById(R.id.btnDocumentos);
         btnVerbas = (Button)findViewById(R.id.btnVerbas);
         btnEventos = (Button)findViewById(R.id.btnEventos);
-        btnConsultores = (Button)findViewById(R.id.btnConsultores);
+        btnPedidos = (Button)findViewById(R.id.btnPedidos);
+//        btnConsultores = (Button)findViewById(R.id.btnConsultores);
         btnClientes = (Button)findViewById(R.id.btnClientes);
+        btnRepresentantes = (Button)findViewById(R.id.btnRepresentantes);
+        btnRepresentadas = (Button)findViewById(R.id.btnRepresentadas);
         btnVias = (Button)findViewById(R.id.btnVias);
         btnCanais = (Button)findViewById(R.id.btnCanais);
 //        btnCriarCopia = (Button)findViewById(R.id.btnCriarCopia);
@@ -39,8 +45,11 @@ public class ProtocoloActivity extends Activity implements OnClickListener {
         btnDocumentos.setOnClickListener(this);
         btnVerbas.setOnClickListener(this);
         btnEventos.setOnClickListener(this);
-        btnConsultores.setOnClickListener(this);
+        btnPedidos.setOnClickListener(this);
+//        btnConsultores.setOnClickListener(this);
         btnClientes.setOnClickListener(this);
+        btnRepresentantes.setOnClickListener(this);
+        btnRepresentadas.setOnClickListener(this);
         btnVias.setOnClickListener(this);
         btnCanais.setOnClickListener(this);
 //        btnCriarCopia.setOnClickListener(this);
@@ -56,10 +65,16 @@ public class ProtocoloActivity extends Activity implements OnClickListener {
 			intent = new Intent("LISTA_VERBAS");
 		} else if (view.equals(btnEventos)) {
 			intent = new Intent("LISTA_EVENTOS");
-		} else if (view.equals(btnConsultores)) {
-			intent = new Intent("LISTA_CONSULTORES");
+		} else if (view.equals(btnPedidos)) {
+			intent = new Intent("LISTA_PEDIDOS");
+//		} else if (view.equals(btnConsultores)) {
+//			intent = new Intent("LISTA_CONSULTORES");
 		} else if (view.equals(btnClientes)) {
 			intent = new Intent("LISTA_CLIENTES");
+		} else if (view.equals(btnRepresentantes)) {
+			intent = new Intent("LISTA_REPRESENTANTES");
+		} else if (view.equals(btnRepresentadas)) {
+			intent = new Intent("LISTA_REPRESENTADAS");
 		} else if (view.equals(btnVias)) {
 			intent = new Intent("LISTA_VIAS");
 		} else if (view.equals(btnCanais)) {

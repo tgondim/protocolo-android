@@ -50,7 +50,8 @@ public class VerbaAdapter extends BaseAdapter {
 		TextView txtAcao = (TextView)view.findViewById(R.id.txtAcaoLinhaVerba);
 		TextView txtValor = (TextView)view.findViewById(R.id.txtValorLinhaVerba);
 		TextView txtCanal = (TextView)view.findViewById(R.id.txtCanalLinhaVerba);
-		TextView txtConsultor = (TextView)view.findViewById(R.id.txtConsultorLinhaVerba);
+		TextView txtRepresentante = (TextView)view.findViewById(R.id.txtRepresentanteLinhaVerba);
+		TextView txtRepresentada = (TextView)view.findViewById(R.id.txtRepresentadaLinhaVerba);
 		TextView txtData = (TextView)view.findViewById(R.id.txtDataLinhaVerba);
 		
 		txtId.setText(String.valueOf(verba.getId()));
@@ -66,8 +67,11 @@ public class VerbaAdapter extends BaseAdapter {
 		if (verba.getCanal() != null) {
 			txtCanal.setText(verba.getCanal().getDescricao());			
 		}
-		if (verba.getConsultor() != null) {	
-			txtConsultor.setText(verba.getConsultor().getNome());
+		if (verba.getRepresentante() != null) {	
+			txtRepresentante.setText(verba.getRepresentante().getNome());
+		}
+		if (verba.getRepresentada() != null) {	
+			txtRepresentada.setText(verba.getRepresentada().getRazaoSocial());
 		}
 		if (verba.getData() != null) {
 			txtData.setText(StringUtils.getDataHora(verba.getData()));

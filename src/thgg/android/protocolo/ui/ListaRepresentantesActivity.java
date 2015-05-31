@@ -4,8 +4,8 @@ import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 import thgg.android.protocolo.R;
-import thgg.android.protocolo.model.Consultor;
-import thgg.android.protocolo.model.RepositorioConsultores;
+import thgg.android.protocolo.model.RepositorioRepresentantes;
+import thgg.android.protocolo.model.Representante;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,7 +23,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ListaConsultoresActivity extends ListActivity implements OnItemClickListener {
+public class ListaRepresentantesActivity extends ListActivity implements OnItemClickListener {
 
 	private View ordenacaoView;
 	
@@ -44,25 +45,27 @@ public class ListaConsultoresActivity extends ListActivity implements OnItemClic
 	@Override
 	protected void onStart() {
 		super.onStart();
-		atualizarConsultor();		
+		atualizarRepresentante();		
 	}
 
-	private void atualizarConsultor() {
-		ArrayList<Consultor> listaConsultores = RepositorioConsultores.getRepositorio(this).listar(ordenacao);
-		ConsultorAdapter consultorAdapter = new ConsultorAdapter(this, listaConsultores);
-		setListAdapter(consultorAdapter);
+	private void atualizarRepresentante() {
+		ArrayList<Representante> listaRepresentantes = RepositorioRepresentantes.getRepositorio(this).listar(ordenacao);
+		RepresentanteAdapter representanteAdapter = new RepresentanteAdapter(this, listaRepresentantes);
+		setListAdapter(representanteAdapter);
 	} 
 	
 	@Override
 	protected void onListItemClick (ListView l, View v, int position, long id) {
-		Intent intent = new Intent("CADASTRO_CONSULTORES");
+		Intent intent = new Intent("CADASTRO_REPRESENTANTES");
 		intent.putExtra("id", getListView().getItemIdAtPosition(position));
 		startActivity(intent);
 	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.novo_consultor));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_representantes_menu, menu);
+
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -70,8 +73,8 @@ public class ListaConsultoresActivity extends ListActivity implements OnItemClic
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
-			intent = new Intent("CADASTRO_CONSULTORES");
+		case R.id.novo_representante_lista_representantes:
+			intent = new Intent("CADASTRO_REPRESENTANTES");
 			intent.putExtra("id", 0);
 			startActivity(intent);
 			break;
@@ -93,8 +96,8 @@ public class ListaConsultoresActivity extends ListActivity implements OnItemClic
 		
 		switch (item.getItemId()) {
 		case 2:
-			RepositorioConsultores.getRepositorio(this).excluir(info.id);
-			atualizarConsultor();
+			RepositorioRepresentantes.getRepositorio(this).excluir(info.id);
+			atualizarRepresentante();
 			break;
 
 		case 3:
@@ -102,7 +105,7 @@ public class ListaConsultoresActivity extends ListActivity implements OnItemClic
 			break;
 
 		default:
-			throw new InvalidParameterException("Opção inválida");
+			throw new InvalidParameterException("Opcao invalida");
 		}
 		return super.onContextItemSelected(item);
 	}
@@ -139,7 +142,7 @@ public class ListaConsultoresActivity extends ListActivity implements OnItemClic
 			ordenacao = "nome";
 			break;
 		}
-		atualizarConsultor();
+		atualizarRepresentante();
 		getOrdenacaoDialog().dismiss();
 	}	
 }

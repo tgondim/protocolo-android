@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/novo_documento_lista_documentos"
+          android:title="@string/novo_documento"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_via_lista_documentos"
+          android:title="@string/nova_via"
+          android:showAsAction="ifRoom"/>
+</menu>

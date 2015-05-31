@@ -16,22 +16,25 @@ public class Verba {
 	
 	private Canal canal;
 	
-	private Consultor consultor;
+	private Representante representante;
+
+	private Representada representada;
 	
 	private Calendar data;
 	
-	public Verba(Cliente cliente, String acao, float valor, Via via, Canal canal, Consultor consultor, Calendar data) {
+	public Verba(Cliente cliente, String acao, float valor, Via via, Canal canal, Representante representante, Representada representada, Calendar data) {
 		this.cliente = cliente;
 		this.acao = acao;
 		this.valor = valor;
 		this.via = via;
 		this.canal = canal;
-		this.consultor = consultor;
+		this.representante = representante;
+		this.representada = representada;
 		this.data = data;
 	}
 
-	Verba(long id, Cliente cliente, String acao, float valor, Via via, Canal canal, Consultor consultor, Calendar data) {
-		this(cliente, acao, valor, via, canal, consultor, data);
+	Verba(long id, Cliente cliente, String acao, float valor, Via via, Canal canal, Representante representante, Representada representada, Calendar data) {
+		this(cliente, acao, valor, via, canal, representante, representada, data);
 		this.id = id;
 	}
 	
@@ -78,12 +81,12 @@ public class Verba {
 		this.canal = canal;
 	}
 
-	public Consultor getConsultor() {
-		return consultor;
+	public Representante getRepresentante() {
+		return representante;
 	}
 
-	public void setConsultor(Consultor consultor) {
-		this.consultor = consultor;
+	public void setRepresentante(Representante representante) {
+		this.representante = representante;
 	}
 
 	public Calendar getData() {
@@ -98,6 +101,14 @@ public class Verba {
 		return id;
 	}
 
+	public Representada getRepresentada() {
+		return representada;
+	}
+
+	public void setRepresentada(Representada representada) {
+		this.representada = representada;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		return this.getId() == ((Verba)o).getId();
@@ -105,6 +116,6 @@ public class Verba {
 	
 	@Override
 	public String toString() {
-		return this.getCliente() + " " + this.getCanal() + " " + this.getConsultor();
+		return this.getCliente() + " " + this.getCanal() + " " + this.getRepresentante() + " " + this.getRepresentada();
 	}
 }

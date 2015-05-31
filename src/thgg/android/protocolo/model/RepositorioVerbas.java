@@ -43,7 +43,7 @@ public class RepositorioVerbas {
 	
 	public Verba procurar(long id) {
 		Cursor cursor = db.query("verbas", 
-				new String[] {"_id", "cliente", "acao", "valor", "via", "canal", "consultor", "data", "hora"},
+				new String[] {"_id", "cliente", "acao", "valor", "via", "canal", "representante", "representada", "data", "hora"},
 				"_id=?", 
 				new String[]{String.valueOf(id)}, 
 				null, 
@@ -54,7 +54,8 @@ public class RepositorioVerbas {
 			Via via = RepositorioVias.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("via")));
 			Canal canal = RepositorioCanais.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("canal")));
 			Cliente cliente = RepositorioClientes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("cliente")));
-			Consultor consultor = RepositorioConsultores.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("consultor")));
+			Representante representante = RepositorioRepresentantes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representante")));
+			Representada representada = RepositorioRepresentadas.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representada")));
 			
 			Calendar data = StringUtils.getCalendar(cursor.getString(cursor.getColumnIndexOrThrow("data")), 
 					cursor.getString(cursor.getColumnIndexOrThrow("hora")));
@@ -65,7 +66,8 @@ public class RepositorioVerbas {
 					cursor.getFloat(cursor.getColumnIndexOrThrow("valor")),
 					via,
 					canal,
-					consultor,
+					representante,
+					representada,
 					data);
 			return verba;
 		}
@@ -75,7 +77,7 @@ public class RepositorioVerbas {
 	public ArrayList<Verba> listar(String colunaOrdenar) {
 		ArrayList<Verba> listaVerbas = new ArrayList<Verba>();
 		Cursor cursor = db.query("verbas", 
-				new String[] {"_id", "cliente", "acao", "valor", "via", "canal", "consultor", "data", "hora"}, 
+				new String[] {"_id", "cliente", "acao", "valor", "via", "canal", "representante", "representada",  "data", "hora"}, 
 				null, 
 				null, 
 				null, 
@@ -88,7 +90,8 @@ public class RepositorioVerbas {
 				Via via = RepositorioVias.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("via")));
 				Canal canal = RepositorioCanais.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("canal")));
 				Cliente cliente = RepositorioClientes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("cliente")));
-				Consultor consultor = RepositorioConsultores.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("consultor")));
+				Representante representante = RepositorioRepresentantes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representante")));
+				Representada representada = RepositorioRepresentadas.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representada")));
 				
 				Calendar data = StringUtils.getCalendar(cursor.getString(cursor.getColumnIndexOrThrow("data")), 
 						cursor.getString(cursor.getColumnIndexOrThrow("hora")));
@@ -99,7 +102,8 @@ public class RepositorioVerbas {
 						cursor.getFloat(cursor.getColumnIndexOrThrow("valor")),
 						via,
 						canal,
-						consultor,
+						representante,
+						representada,
 						data);				
 				listaVerbas.add(verba);
 				cursor.moveToNext();
@@ -108,15 +112,15 @@ public class RepositorioVerbas {
 		return listaVerbas;
 	}
 	
-	public double getValorResumo(long idCliente, long idCanal, long idConsultor, Calendar dataIni, Calendar dataFim ) {
+	public double getValorResumo(long idCliente, long idCanal, long idRepresentante, Calendar dataIni, Calendar dataFim ) {
 //		ArrayList<Verba> listaVerbas = new ArrayList<Verba>();
 		double total = 0.0;
 		
 		Cursor cursor = db.query("verbas", 
-				new String[] {"cliente", "canal", "consultor", "valor"}, 
+				new String[] {"cliente", "canal", "representante", "valor"}, 
 				"(data>='"+ StringUtils.getData(dataIni) + "' and data<='" + StringUtils.getData(dataFim) + "')" 
 				+ (idCliente > 1 ? " and cliente=" + idCliente : "") 
-				+ (idConsultor > 1 ? " and consultor=" + idConsultor : "") 
+				+ (idRepresentante > 1 ? " and representante=" + idRepresentante : "") 
 				+ (idCanal > 1 ? " and canal=" + idCanal : ""),
 				null, 
 				null, 
@@ -127,7 +131,7 @@ public class RepositorioVerbas {
 			
 //			Canal canal = RepositorioCanais.getRepositorio(ctx).procurar(idCanal);
 //			Cliente cliente = RepositorioClientes.getRepositorio(ctx).procurar(idCliente);
-//			Consultor consultor = RepositorioConsultores.getRepositorio(ctx).procurar(idConsultor);
+//			Representante representante = RepositorioRepresentantes.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("representante")));
 			
 			while (!cursor.isAfterLast()) {
 //				Via via = RepositorioVias.getRepositorio(ctx).procurar(cursor.getLong(cursor.getColumnIndexOrThrow("via")));
@@ -150,7 +154,8 @@ public class RepositorioVerbas {
 		cv.put("valor", verba.getValor());
 		cv.put("via", verba.getVia().getId());
 		cv.put("canal", verba.getCanal().getId());
-		cv.put("consultor", verba.getConsultor().getId());
+		cv.put("representante", verba.getRepresentante().getId());
+		cv.put("representada", verba.getRepresentada().getId());
 		cv.put("data", StringUtils.getData(verba.getData()));
 		cv.put("hora", StringUtils.getHora(verba.getData()));
 		
@@ -165,7 +170,8 @@ public class RepositorioVerbas {
 		cv.put("valor", verba.getValor());
 		cv.put("via", verba.getVia().getId());
 		cv.put("canal", verba.getCanal().getId());
-		cv.put("consultor", verba.getConsultor().getId());
+		cv.put("representante", verba.getRepresentante().getId());
+		cv.put("representada", verba.getRepresentada().getId());
 		cv.put("data", StringUtils.getData(verba.getData()));
 		cv.put("hora", StringUtils.getHora(verba.getData()));
 		

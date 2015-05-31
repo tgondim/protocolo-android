@@ -5,11 +5,11 @@ import java.util.Calendar;
 
 import thgg.android.protocolo.R;
 import thgg.android.protocolo.model.Cliente;
-import thgg.android.protocolo.model.Consultor;
 import thgg.android.protocolo.model.Evento;
 import thgg.android.protocolo.model.RepositorioClientes;
-import thgg.android.protocolo.model.RepositorioConsultores;
 import thgg.android.protocolo.model.RepositorioEventos;
+import thgg.android.protocolo.model.RepositorioRepresentantes;
+import thgg.android.protocolo.model.Representante;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +32,7 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 	private EditText etxtNumeroPessoas;
 	
 	private Spinner spnCliente;
-	private Spinner spnConsultor;
+	private Spinner spnRepresentante;
 	
 	private DatePicker dpData;
 	
@@ -42,10 +42,10 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 	private Button btnCancelar;
 	
 	private ArrayList<Cliente> listaClientes;
-	private ArrayList<Consultor> listaConsultores;
+	private ArrayList<Representante> listaRepresentantes;
 	
 	private ArrayAdapter<Cliente> spinnerClienteAdapter;
-	private ArrayAdapter<Consultor> spinnerConsultorAdapter;
+	private ArrayAdapter<Representante> spinnerRepresentanteAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 		btnSalvar = (Button)findViewById(R.id.btnSalvarEvento);
 		btnCancelar = (Button)findViewById(R.id.btnCancelarEvento);
 		spnCliente = (Spinner)findViewById(R.id.spnClienteEvento);
-		spnConsultor = (Spinner)findViewById(R.id.spnConsultorEvento);
+		spnRepresentante = (Spinner)findViewById(R.id.spnRepresentanteEvento);
 		
 		tpHora.setIs24HourView(true);
 		btnSalvar.setOnClickListener(this);
@@ -76,10 +76,10 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 		spinnerClienteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spnCliente.setAdapter(spinnerClienteAdapter);		
 
-		this.listaConsultores = RepositorioConsultores.getRepositorio(this).listar("nome");
-		spinnerConsultorAdapter = new ArrayAdapter<Consultor>(this, android.R.layout.simple_spinner_item, listaConsultores);
-		spinnerConsultorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spnConsultor.setAdapter(spinnerConsultorAdapter);		
+		this.listaRepresentantes = RepositorioRepresentantes.getRepositorio(this).listar("nome");
+		spinnerRepresentanteAdapter = new ArrayAdapter<Representante>(this, android.R.layout.simple_spinner_item, listaRepresentantes);
+		spinnerRepresentanteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnRepresentante.setAdapter(spinnerRepresentanteAdapter);		
 
 		long id = getIntent().getLongExtra("id", -1);
 		if (id != -1) {
@@ -91,11 +91,11 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 	
 	private void atualizaEvento(long id) {
 		evento = RepositorioEventos.getRepositorio(this).procurar(id);
-		txtNumero.setText("Número: " + evento.getId());
+		txtNumero.setText("Numero: " + evento.getId());
 		etxtTitulo.setText(evento.getTitulo());
 		etxtNumeroPessoas.setText(String.valueOf(evento.getNumeroPessoas()));
 		spnCliente.setSelection(spinnerClienteAdapter.getPosition(evento.getCliente()));
-		spnConsultor.setSelection(spinnerConsultorAdapter.getPosition(evento.getConsultor()));
+		spnRepresentante.setSelection(spinnerRepresentanteAdapter.getPosition(evento.getRepresentante()));
 
 		Calendar data = evento.getData();
 		dpData.updateDate(data.get(Calendar.YEAR), 
@@ -111,7 +111,7 @@ public class CadastroEventosActivity extends Activity implements OnClickListener
 			evento.setTitulo(etxtTitulo.getText().toString());
 			evento.setNumeroPessoas(Integer.parseInt(etxtNumeroPessoas.getText().toString()));
 			evento.setCliente((Cliente)spnCliente.getSelectedItem());
-			evento.setConsultor((Consultor)spnConsultor.getSelectedItem());
+			evento.setRepresentante((Representante)spnRepresentante.getSelectedItem());
 			
 			Calendar data = Calendar.getInstance();
 			data.set(Calendar.DAY_OF_MONTH, dpData.getDayOfMonth());

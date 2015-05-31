@@ -14,6 +14,7 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,7 +63,9 @@ public class ListaClientesActivity extends ListActivity implements OnItemClickLi
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.novo_cliente));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_clientes_menu, menu);
+	    
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -70,7 +73,7 @@ public class ListaClientesActivity extends ListActivity implements OnItemClickLi
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.novo_cliente_lista_clientes:
 			intent = new Intent("CADASTRO_CLIENTES");
 			intent.putExtra("id", 0);
 			startActivity(intent);
@@ -102,7 +105,7 @@ public class ListaClientesActivity extends ListActivity implements OnItemClickLi
 			break;
 
 		default:
-			throw new InvalidParameterException("Opção inválida");
+			throw new InvalidParameterException("Opï¿½ï¿½o invï¿½lida");
 		}
 		return super.onContextItemSelected(item);
 	}

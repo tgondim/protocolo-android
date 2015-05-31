@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/cadastro_pedidos" />
+
+	<ScrollView android:id="@+id/svPedidos1"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<LinearLayout android:id="@+id/llPedidos1"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginRight="5dp" android:orientation="vertical">
+
+			<TextView android:text="@string/txt_id" android:id="@+id/txtIdPedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			
+			<TextView android:text="@string/txt_cliente" android:id="@+id/txtClientePedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<Spinner android:id="@+id/spnClientePedido"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />				
+				
+			<TextView android:text="@string/txt_numero" android:id="@+id/txtNumeroPedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:singleLine="true" android:id="@+id/etxtNumeroPedido"/>
+
+			<TextView android:text="@string/txt_valor_total" android:id="@+id/txtValorTotalPedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:singleLine="true" android:id="@+id/etxtValorTotalPedido" android:inputType="numberDecimal"/>
+
+			<TextView android:text="@string/txt_representada"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtRepresentadaPedido" />
+			<Spinner android:id="@+id/spnRepresentadaPedido"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_representante"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/txtRepresentantePedido" />
+			<Spinner android:id="@+id/spnRepresentantePedido"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+			<TextView android:text="@string/txt_data" android:id="@+id/txtDataPedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<DatePicker android:id="@+id/dpDataPedido"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:foregroundGravity="center_horizontal" />
+
+			<TextView android:text="@string/txt_hora" android:id="@+id/txtHoraPedido"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TimePicker android:id="@+id/tpHoraPedido"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout android:id="@+id/llPedidos2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<Button android:text="@string/btn_salvar" android:id="@+id/btnSalvarPedido"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+		<Button android:text="@string/btn_cancelar" android:id="@+id/btnCancelarPedido"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+</LinearLayout>

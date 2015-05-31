@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/novo_evento_lista_eventos"
+          android:title="@string/novo_evento"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_cliente_lista_eventos"
+          android:title="@string/novo_cliente"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/novo_representante_lista_eventos"
+          android:title="@string/novo_representante"
+          android:showAsAction="ifRoom"/>
+</menu>

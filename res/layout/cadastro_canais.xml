@@ -10,7 +10,8 @@
 	<TextView android:text="@string/txt_descricao" android:id="@+id/txtDescricaoCanal"
 		android:layout_width="wrap_content" android:layout_height="wrap_content" />
 	<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
-		android:singleLine="true" android:id="@+id/etxtDescricaoCanal"/>
+		android:singleLine="true" android:id="@+id/etxtDescricaoCanal"
+		android:capitalize="sentences"/>
 
 	<LinearLayout android:id="@+id/llCanal1"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"

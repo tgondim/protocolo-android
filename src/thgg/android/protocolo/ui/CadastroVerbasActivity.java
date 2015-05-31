@@ -6,12 +6,14 @@ import java.util.Calendar;
 import thgg.android.protocolo.R;
 import thgg.android.protocolo.model.Canal;
 import thgg.android.protocolo.model.Cliente;
-import thgg.android.protocolo.model.Consultor;
 import thgg.android.protocolo.model.RepositorioCanais;
 import thgg.android.protocolo.model.RepositorioClientes;
-import thgg.android.protocolo.model.RepositorioConsultores;
+import thgg.android.protocolo.model.RepositorioRepresentadas;
+import thgg.android.protocolo.model.RepositorioRepresentantes;
 import thgg.android.protocolo.model.RepositorioVerbas;
 import thgg.android.protocolo.model.RepositorioVias;
+import thgg.android.protocolo.model.Representada;
+import thgg.android.protocolo.model.Representante;
 import thgg.android.protocolo.model.Verba;
 import thgg.android.protocolo.model.Via;
 import android.app.Activity;
@@ -38,7 +40,8 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 	private Spinner spnCliente;
 	private Spinner spnVia;
 	private Spinner spnCanal;
-	private Spinner spnConsultor;
+	private Spinner spnRepresentante;
+	private Spinner spnRepresentada;
 	
 	private DatePicker dpData;
 	
@@ -50,12 +53,14 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 	private ArrayList<Cliente> listaClientes;
 	private ArrayList<Via> listaVias;
 	private ArrayList<Canal> listaCanais;
-	private ArrayList<Consultor> listaConsultores;
+	private ArrayList<Representante> listaRepresentantes;
+	private ArrayList<Representada> listaRepresentadas;
 	
 	private ArrayAdapter<Cliente> spinnerClienteAdapter;
 	private ArrayAdapter<Via> spinnerViaAdapter;
 	private ArrayAdapter<Canal> spinnerCanalAdapter;
-	private ArrayAdapter<Consultor> spinnerConsultorAdapter;
+	private ArrayAdapter<Representante> spinnerRepresentanteAdapter;
+	private ArrayAdapter<Representada> spinnerRepresentadaAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +73,8 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 		etxtValor = (EditText)findViewById(R.id.etxtValorVerba);
 		spnVia = (Spinner)findViewById(R.id.spnViaVerba);
 		spnCanal = (Spinner)findViewById(R.id.spnCanalVerba);
-		spnConsultor = (Spinner)findViewById(R.id.spnConsultorVerba);
+		spnRepresentante = (Spinner)findViewById(R.id.spnRepresentanteVerba);
+		spnRepresentada = (Spinner)findViewById(R.id.spnRepresentadaVerba);
 		dpData = (DatePicker)findViewById(R.id.dpDataVerba);
 		tpHora = (TimePicker)findViewById(R.id.tpHoraVerba);
 		btnSalvar = (Button)findViewById(R.id.btnSalvarVerba);
@@ -98,10 +104,15 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 		spinnerCanalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spnCanal.setAdapter(spinnerCanalAdapter);		
 		
-		this.listaConsultores = RepositorioConsultores.getRepositorio(this).listar("nome");
-		spinnerConsultorAdapter = new ArrayAdapter<Consultor>(this, android.R.layout.simple_spinner_item, listaConsultores);
-		spinnerConsultorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spnConsultor.setAdapter(spinnerConsultorAdapter);		
+		this.listaRepresentantes = RepositorioRepresentantes.getRepositorio(this).listar("nome");
+		spinnerRepresentanteAdapter = new ArrayAdapter<Representante>(this, android.R.layout.simple_spinner_item, listaRepresentantes);
+		spinnerRepresentanteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnRepresentante.setAdapter(spinnerRepresentanteAdapter);		
+	
+		this.listaRepresentadas = RepositorioRepresentadas.getRepositorio(this).listar("razao_social");
+		spinnerRepresentadaAdapter = new ArrayAdapter<Representada>(this, android.R.layout.simple_spinner_item, listaRepresentadas);
+		spinnerRepresentadaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnRepresentada.setAdapter(spinnerRepresentadaAdapter);		
 
 		long id = getIntent().getLongExtra("id", -1);
 		if (id != -1) {
@@ -113,13 +124,14 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 	
 	private void atualizaVerba(long id) {
 		verba = RepositorioVerbas.getRepositorio(this).procurar(id);
-		txtNumero.setText("Número: " + verba.getId());
+		txtNumero.setText("Numero: " + verba.getId());
 		spnCliente.setSelection(spinnerClienteAdapter.getPosition(verba.getCliente()));
 		etxtAcao.setText(verba.getAcao());
 		etxtValor.setText(String.valueOf(verba.getValor()));
 		spnVia.setSelection(spinnerViaAdapter.getPosition(verba.getVia()));
 		spnCanal.setSelection(spinnerCanalAdapter.getPosition(verba.getCanal()));
-		spnConsultor.setSelection(spinnerConsultorAdapter.getPosition(verba.getConsultor()));
+		spnRepresentante.setSelection(spinnerRepresentanteAdapter.getPosition(verba.getRepresentante()));
+		spnRepresentada.setSelection(spinnerRepresentadaAdapter.getPosition(verba.getRepresentada()));
 		
 		Calendar data = verba.getData();
 		dpData.updateDate(data.get(Calendar.YEAR), 
@@ -137,7 +149,9 @@ public class CadastroVerbasActivity extends Activity implements OnClickListener 
 			verba.setValor(Float.parseFloat(etxtValor.getText().toString()));
 			verba.setVia((Via)spnVia.getSelectedItem());
 			verba.setCanal((Canal)spnCanal.getSelectedItem());
-			verba.setConsultor((Consultor)spnConsultor.getSelectedItem());
+			verba.setRepresentante((Representante)spnRepresentante.getSelectedItem());
+			verba.setRepresentada((Representada)spnRepresentada.getSelectedItem());
+			
 			
 			Calendar data = Calendar.getInstance();
 			data.set(Calendar.DAY_OF_MONTH, dpData.getDayOfMonth());

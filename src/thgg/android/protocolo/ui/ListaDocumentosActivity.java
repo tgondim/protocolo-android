@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -62,9 +63,9 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.novo_documento));
-		menu.add(0, 2, 0, getResources().getString(R.string.nova_via));
-//		menu.add(0, 3, 0, getResources().getString(R.string.sumario));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_documentos_menu, menu);
+	    
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -72,19 +73,19 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.novo_documento_lista_documentos:
 			intent = new Intent("CADASTRO_DOCUMENTOS");
 			intent.putExtra("id", 0);
 			startActivity(intent);
 			break;
 			
-		case 2: 
+		case R.id.novo_via_lista_documentos: 
 			intent = new Intent("CADASTRO_VIAS");
 			startActivity(intent);
 			break;
 		
 //		case 3: 
-//			//chamar a visualização do resumo
+//			//chamar a visualizacao do resumo
 //			break;
 		}
 		return super.onMenuItemSelected(featureId, item);
@@ -113,7 +114,7 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 			break;
 
 		default:
-			throw new InvalidParameterException("OpÁ„o inv·lida");
+			throw new InvalidParameterException("Opcao invalida");
 		}
 		return super.onContextItemSelected(item);
 	}
@@ -121,7 +122,7 @@ public class ListaDocumentosActivity extends ListActivity implements OnItemClick
 	private View getOrdenacaoView() {
 		if (ordenacaoView == null) {
 			ordenacaoView = LayoutInflater.from(this).inflate(R.layout.ordenacao_dialog, null);
-			String[] listaOrdenacao = new String[] {"N˙mero de Protocolo", "Descricao", "Destino", "Data"}; 
+			String[] listaOrdenacao = new String[] {"Numero de Protocolo", "Descricao", "Destino", "Data"}; 
 			lvOrdenacao = (ListView)ordenacaoView.findViewById(R.id.lvOrdenacao);
 			ordenacaoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaOrdenacao);
 			lvOrdenacao.setAdapter(ordenacaoAdapter);

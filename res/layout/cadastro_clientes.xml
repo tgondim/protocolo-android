@@ -10,7 +10,8 @@
 	<TextView android:text="@string/txt_nome" android:id="@+id/txtNomeCliente"
 		android:layout_width="wrap_content" android:layout_height="wrap_content" />
 	<EditText android:text="" android:layout_width="fill_parent" android:layout_height="wrap_content" 
-		android:singleLine="true" android:id="@+id/etxtNomeCliente"/>
+		android:singleLine="true" android:id="@+id/etxtNomeCliente"
+		android:capitalize="sentences"/>
 
 	<LinearLayout android:id="@+id/llCliente1"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"

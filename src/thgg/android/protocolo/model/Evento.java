@@ -10,24 +10,24 @@ public class Evento {
 	
 	private Cliente cliente;
 	
-	private Consultor consultor;
+	private Representante representante;
 	
 	private int numeroPessoas;
 	
 	private Calendar data;
 	
-	public Evento(String titulo, Cliente cliente, Consultor consultor,
+	public Evento(String titulo, Cliente cliente, Representante representante,
 			int numeroPessoas, Calendar data) {
 		this.titulo = titulo;
 		this.cliente = cliente;
-		this.consultor = consultor;
+		this.representante = representante;
 		this.numeroPessoas = numeroPessoas;
 		this.data = data;
 	}
 
 	Evento(long id, String titulo, Cliente cliente,
-			Consultor consultor, int numeroPessoas, Calendar data) {
-		this(titulo, cliente, consultor, numeroPessoas, data);
+			Representante representante, int numeroPessoas, Calendar data) {
+		this(titulo, cliente, representante, numeroPessoas, data);
 		this.id = id;
 	}
 	
@@ -50,12 +50,12 @@ public class Evento {
 		this.cliente = cliente;
 	}
 
-	public Consultor getConsultor() {
-		return consultor;
+	public Representante getRepresentante() {
+		return representante;
 	}
 
-	public void setConsultor(Consultor consultor) {
-		this.consultor = consultor;
+	public void setRepresentante(Representante representante) {
+		this.representante = representante;
 	}
 
 	public int getNumeroPessoas() {
@@ -86,7 +86,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		return this.getTitulo() + " " + this.getCliente() + " " + 
-			this.getConsultor();
+			this.getRepresentante();
 	}
 	
 }

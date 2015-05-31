@@ -1,21 +1,25 @@
 package thgg.android.protocolo.model;
 
-public class Consultor {
+import java.io.Serializable;
+
+public class Representante implements Serializable {
+
+	private static final long serialVersionUID = 8189829125153882267L;
 
 	private long id;
 	
 	private String nome;
 
-	public Consultor(String nome) {
+	public Representante(String nome) {
 		this.nome = nome;
 	}
 
-	Consultor(long id, String nome) {
+	Representante(long id, String nome) {
 		this(nome);
 		this.id = id;
 	}
 	
-	public Consultor() {
+	public Representante() {
 	}
 
 	public String getNome() {
@@ -32,7 +36,7 @@ public class Consultor {
 	
 	@Override
 	public boolean equals(Object o) {
-		return this.getId() == ((Consultor)o).getId();
+		return this.getId() == ((Representante)o).getId();
 	}
 	
 	@Override

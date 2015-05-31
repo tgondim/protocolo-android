@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -62,12 +63,9 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.nova_verba));
-		menu.add(0, 2, 0, getResources().getString(R.string.novo_cliente));
-		menu.add(0, 3, 0, getResources().getString(R.string.nova_via));
-		menu.add(0, 4, 0, getResources().getString(R.string.novo_canal));
-		menu.add(0, 5, 0, getResources().getString(R.string.novo_consultor));
-		menu.add(0, 6, 0, getResources().getString(R.string.sumario));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_verbas_menu, menu);
+	    
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -75,37 +73,42 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.novo_verba_lista_verbas:
 			intent = new Intent("CADASTRO_VERBAS");
 			intent.putExtra("id", 0);
 			startActivity(intent);
 			break;
 
-		case 2:
+		case R.id.novo_cliente_lista_verbas:
 			intent = new Intent("CADASTRO_CLIENTES");
 			intent.putExtra("id", 0);
 			startActivity(intent);
 			break;
 			
-		case 3: 
+		case R.id.novo_via_lista_verbas: 
 			intent = new Intent("CADASTRO_VIAS");
 			startActivity(intent);
 			break;
 
-		case 4: 
+		case R.id.novo_canal_lista_verbas: 
 			intent = new Intent("CADASTRO_CANAIS");
 			startActivity(intent);
 			break;
 		
-		case 5: 
-			intent = new Intent("CADASTRO_CONSULTORES");
+		case R.id.novo_representante_lista_verbas: 
+			intent = new Intent("CADASTRO_REPRESENTANTES");
 			startActivity(intent);
 			break;
 			
-		case 6: 
-			intent = new Intent("RESUMO_VERBAS");
+		case R.id.novo_representada_lista_verbas: 
+			intent = new Intent("CADASTRO_REPRESENTADAS");
 			startActivity(intent);
 			break;
+			
+//		case R.id.novo_sumario_lista_verbas: 
+//			intent = new Intent("RESUMO_VERBAS");
+//			startActivity(intent);
+//			break;
 		}
 		return super.onMenuItemSelected(featureId, item);
 	}
@@ -133,7 +136,7 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 			break;
 
 		default:
-			throw new InvalidParameterException("Opção inválida");
+			throw new InvalidParameterException("Opcao invalida");
 		}
 		return super.onContextItemSelected(item);
 	}
@@ -141,7 +144,7 @@ public class ListaVerbasActivity extends ListActivity implements OnItemClickList
 	private View getOrdenacaoView() {
 		if (ordenacaoView == null) {
 			ordenacaoView = LayoutInflater.from(this).inflate(R.layout.ordenacao_dialog, null);
-			String[] listaOrdenacao = new String[] {"Número de Protocolo", "Cliente", "Ação", "Valor", "Data"}; 
+			String[] listaOrdenacao = new String[] {"Numero de Protocolo", "Cliente", "Acao", "Valor", "Data"}; 
 			lvOrdenacao = (ListView)ordenacaoView.findViewById(R.id.lvOrdenacao);
 			ordenacaoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaOrdenacao);
 			lvOrdenacao.setAdapter(ordenacaoAdapter);

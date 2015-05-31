@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="thgg.android.protocolo"
-    android:versionCode="4"
-    android:versionName="1.4" >
+    android:versionCode="5" android:versionName="1.5">
  	
- 	<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="17"/>
+ 	<uses-sdk android:minSdkVersion="11" android:targetSdkVersion="17"/>
  	
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light"
+        android:theme="@android:style/Theme.Holo.Light"
         android:allowBackup="false" >
         
         <activity
@@ -21,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroDocumentosActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroDocumentosActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="CADASTRO_DOCUMENTOS" >
                 </action>
@@ -30,7 +29,7 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroPalestrasActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroPalestrasActivity" android:windowSoftInputMode="stateAlwaysVisible">
         </activity>
         <activity android:name="thgg.android.protocolo.ui.CadastroVerbasActivity" >
             <intent-filter>
@@ -50,7 +49,7 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroViasActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroViasActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="CADASTRO_VIAS" >
                 </action>
@@ -68,7 +67,7 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroCanaisActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroCanaisActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="CADASTRO_CANAIS" >
                 </action>
@@ -77,16 +76,7 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroConsultoresActivity" >
-            <intent-filter>
-                <action android:name="CADASTRO_CONSULTORES" >
-                </action>
-
-                <category android:name="android.intent.category.DEFAULT" >
-                </category>
-            </intent-filter>
-        </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroClientesActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroClientesActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="CADASTRO_CLIENTES" >
                 </action>
@@ -95,7 +85,25 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.CadastroEventosActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroRepresentantesActivity" android:windowSoftInputMode="stateAlwaysVisible">
+            <intent-filter>
+                <action android:name="CADASTRO_REPRESENTANTES" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name="thgg.android.protocolo.ui.CadastroRepresentadasActivity" android:windowSoftInputMode="stateAlwaysVisible">
+            <intent-filter>
+                <action android:name="CADASTRO_REPRESENTADAS" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name="thgg.android.protocolo.ui.CadastroEventosActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="CADASTRO_EVENTOS" >
                 </action>
@@ -113,9 +121,18 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity android:name="thgg.android.protocolo.ui.ListaConsultoresActivity" >
+        <activity android:name="thgg.android.protocolo.ui.CadastroPedidosActivity" android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
-                <action android:name="LISTA_CONSULTORES" >
+                <action android:name="CADASTRO_PEDIDOS" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name="thgg.android.protocolo.ui.ListaPedidosActivity" >
+            <intent-filter>
+                <action android:name="LISTA_PEDIDOS" >
                 </action>
 
                 <category android:name="android.intent.category.DEFAULT" >
@@ -125,6 +142,24 @@
         <activity android:name="thgg.android.protocolo.ui.ListaClientesActivity" >
             <intent-filter>
                 <action android:name="LISTA_CLIENTES" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name="thgg.android.protocolo.ui.ListaRepresentantesActivity" >
+            <intent-filter>
+                <action android:name="LISTA_REPRESENTANTES" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name="thgg.android.protocolo.ui.ListaRepresentadasActivity" >
+            <intent-filter>
+                <action android:name="LISTA_REPRESENTADAS" >
                 </action>
 
                 <category android:name="android.intent.category.DEFAULT" >
@@ -149,18 +184,18 @@
                 </category>
             </intent-filter>
         </activity>
-        <activity
-            android:name="thgg.android.protocolo.ui.ResumoVerbasActivity"
-            android:label="@string/resumo_verbas" >
-            <intent-filter>
-                <action android:name="RESUMO_VERBAS" >
-                </action>
-                <category android:name="android.intent.category.DEFAULT" >
-                </category>
-            </intent-filter>
+<!--         <activity -->
+<!--             android:name="thgg.android.protocolo.ui.ResumoVerbasActivity" -->
+<!--             android:label="@string/resumo_verbas" > -->
+<!--             <intent-filter> -->
+<!--                 <action android:name="RESUMO_VERBAS" > -->
+<!--                 </action> -->
+<!--                 <category android:name="android.intent.category.DEFAULT" > -->
+<!--                 </category> -->
+<!--             </intent-filter> -->
 <!--             <meta-data -->
 <!--                 android:name="android.support.PARENT_ACTIVITY" -->
 <!--                 android:value="thgg.android.protocolo.ui.ListaVerbasActivity" /> -->
-        </activity>
+<!--         </activity> -->
     </application>
 </manifest>

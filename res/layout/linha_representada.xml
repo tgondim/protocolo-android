@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RepresentadaRelativeLayout" android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TextView android:id="@+id/txtIdLinhaRepresentada"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true" android:text="@+id/txtIdLinhaRepresentada"
+		android:paddingRight="10dp" android:textStyle="bold" />
+	<TextView android:layout_height="wrap_content" android:text="@+id/txtRazaoSocialLinhaRepresentada"
+		android:textColor="@color/representada" android:textStyle="bold"
+		android:id="@+id/txtRazaoSocialLinhaRepresentada" android:layout_width="wrap_content"
+		android:layout_below="@+id/txtIdLinhaRepresentada" ></TextView>
+
+</RelativeLayout>

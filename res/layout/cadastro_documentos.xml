@@ -21,13 +21,15 @@
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			<EditText android:text="" android:layout_width="fill_parent"
 				android:layout_height="wrap_content" android:singleLine="true"
-				android:id="@+id/etxtDescricaoDocumento" />
+				android:id="@+id/etxtDescricaoDocumento" 
+				android:capitalize="sentences"/>
 
 			<TextView android:text="@string/txt_destino" android:id="@+id/txtDestinoDocumento"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 			<EditText android:text="" android:layout_width="fill_parent"
 				android:layout_height="wrap_content" android:singleLine="true"
-				android:id="@+id/etxtDestinoDocumento" />
+				android:id="@+id/etxtDestinoDocumento" 
+				android:capitalize="sentences"/>
 
 			<TextView android:text="@string/txt_via"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"

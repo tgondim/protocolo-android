@@ -47,7 +47,7 @@ public class EventoAdapter extends BaseAdapter {
 		TextView txtId = (TextView)view.findViewById(R.id.txtIdLinhaEvento);
 		TextView txtTitulo = (TextView)view.findViewById(R.id.txtTituloLinhaEvento);
 		TextView txtCliente = (TextView)view.findViewById(R.id.txtClienteLinhaEvento);
-		TextView txtConsultor = (TextView)view.findViewById(R.id.txtConsultorLinhaEvento);
+		TextView txtRepresentante = (TextView)view.findViewById(R.id.txtRepresentanteLinhaEvento);
 		TextView txtNumeroPessoas = (TextView)view.findViewById(R.id.txtNumeroPessoasLinhaEvento);
 		TextView txtData = (TextView)view.findViewById(R.id.txtDataLinhaEvento);
 		
@@ -56,8 +56,8 @@ public class EventoAdapter extends BaseAdapter {
 		if (evento.getCliente() != null) {
 			txtCliente.setText(evento.getCliente().getNome());			
 		}
-		if (evento.getConsultor() != null) {
-			txtConsultor.setText(evento.getConsultor().getNome());			
+		if (evento.getRepresentante() != null) {
+			txtRepresentante.setText(evento.getRepresentante().getNome());			
 		}
 		txtNumeroPessoas.setText(String.valueOf(evento.getNumeroPessoas()) + " pessoas");
 		if (evento.getData() != null) {

@@ -11,9 +11,11 @@
 	<string name="novo_evento">New Event</string>    
 	<string name="nova_verba">New Fund</string>    
 	<string name="novo_cliente">New Client</string>    
+	<string name="novo_representante">Novo Representante</string>    
+	<string name="novo_representada">Nova Representada</string>    
+	<string name="novo_pedido">Novo Pedido</string>  
 	<string name="nova_via">New Way</string>    
 	<string name="novo_canal">New Channel</string>    
-	<string name="novo_consultor">New Consultant</string>    
     <string name="sumario">Summary</string>
     
     <!-- Titulos Activity -->
@@ -21,8 +23,10 @@
     <string name="cadastro_documentos">Documents</string>
     <string name="cadastro_vias">Ways</string>
     <string name="cadastro_canais">Channels</string>
-    <string name="cadastro_consultores">Consultant</string>
     <string name="cadastro_clientes">Clients</string>
+    <string name="cadastro_representantes">Cadastro de Representantes</string>
+    <string name="cadastro_representadas">Cadastro de Representadas</string>
+    <string name="cadastro_pedidos">Cadastro de Pedidos</string>    
     <string name="cadastro_verbas">Funds</string>
     <string name="cadastro_eventos">Events</string>
     <string name="resumo_verbas">Funds Summary</string>
@@ -33,6 +37,7 @@
     <string name="txt_numero_protocolo" >Protocol Number</string>
     <string name="txt_numero_pessoas" >People Number</string>
     <string name="txt_nome" >Name</string>
+    <string name="txt_razao_social" >Razão Social</string>
     <string name="txt_descricao" >Description</string>
     <string name="txt_destino" >Destiny</string>
     <string name="txt_data" >Date</string>
@@ -41,9 +46,11 @@
     <string name="txt_ate" >To</string>
     <string name="txt_via" >Way</string>
     <string name="txt_cliente" >Client</string>
+    <string name="txt_representante" >Representante</string>
+    <string name="txt_representada" >Representada</string>
+    <string name="txt_valor_total" >Valor Total</string>    
     <string name="txt_acao" >Action</string>
     <string name="txt_canal" >Channel</string>
-    <string name="txt_consultor" >Consultant</string>
     <string name="txt_valor" >Value</string>
     <string name="txt_titulo" >Title</string>
     <string name="txt_total" >Total</string>

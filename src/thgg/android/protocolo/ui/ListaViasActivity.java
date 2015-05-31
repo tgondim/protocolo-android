@@ -14,6 +14,7 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,7 +63,9 @@ public class ListaViasActivity extends ListActivity implements OnItemClickListen
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, getResources().getString(R.string.nova_via));
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.lista_vias_menu, menu);
+	    
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -70,7 +73,7 @@ public class ListaViasActivity extends ListActivity implements OnItemClickListen
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		Intent intent;
 		switch (item.getItemId()) {
-		case 1:
+		case R.id.novo_via_lista_vias:
 			intent = new Intent("CADASTRO_VIAS");
 			intent.putExtra("id", 0);
 			startActivity(intent);
@@ -102,7 +105,7 @@ public class ListaViasActivity extends ListActivity implements OnItemClickListen
 			break;
 
 		default:
-			throw new InvalidParameterException("Opção inválida");
+			throw new InvalidParameterException("Opcao invalida");
 		}
 		return super.onContextItemSelected(item);
 	}
@@ -110,7 +113,7 @@ public class ListaViasActivity extends ListActivity implements OnItemClickListen
 	private View getOrdenacaoView() {
 		if (ordenacaoView == null) {
 			ordenacaoView = LayoutInflater.from(this).inflate(R.layout.ordenacao_dialog, null);
-			String[] listaOrdenacao = new String[] {"Id", "Descrição"}; 
+			String[] listaOrdenacao = new String[] {"Id", "Descricao"}; 
 			lvOrdenacao = (ListView)ordenacaoView.findViewById(R.id.lvOrdenacao);
 			ordenacaoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaOrdenacao);
 			lvOrdenacao.setAdapter(ordenacaoAdapter);
